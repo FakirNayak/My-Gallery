@@ -1,11 +1,14 @@
 import react from "react";
 
 import "./App.css";
+import Navbar from "./Component/Navbar";
+import WaveFooter from "./Component/Footer";
 
 function App() {
   return (
     <>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
+      <Navbar />
+      <WaveFooter />
     </>
   );
 }
