@@ -27,7 +27,7 @@ export default function LoveBackground() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url(${bgImage})`,
-            filter: "blur(2px) brightness(0.5)",
+            filter: "blur(0px) brightness(0.7)",
           }}
         ></div>
 
