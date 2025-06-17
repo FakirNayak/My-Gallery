@@ -56,7 +56,7 @@ export default function WaveFooter() {
           variants={itemVariant}
           className="flex items-center gap-3 text-cyan-400 font-semibold text-xl"
         >
-          <span>Mamundeep</span>
+          <span>Mamundeep ❤️</span>
         </motion.div>
 
         {/* Footer Text */}
@@ -64,7 +64,7 @@ export default function WaveFooter() {
           variants={itemVariant}
           className="text-sm text-gray-300 text-center md:text-right"
         >
-          <p>Crafted with passion using React & Framer Motion.</p>
+          <p> Developed by Mamuni and Dipun ❤️</p>
           <p className="mt-1">© 2025 Fakir Nayak. All rights reserved.</p>
         </motion.div>
       </motion.div>
