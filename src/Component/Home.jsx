@@ -5,6 +5,7 @@ import two from "../assets/1.jpg";
 import song from "../assets/s1.mp3";
 import "../Component/Home.css";
 import MusicImageFlow from "./Musicimage";
+import VideoEmojiSection from "./VideoPlay";
 
 export default function ImageGalleryHero() {
   const audioRef = useRef(null);
@@ -137,6 +138,7 @@ export default function ImageGalleryHero() {
         <audio ref={audioRef} src={song} preload="auto" />
       </section>
       <MusicImageFlow />
+      <VideoEmojiSection />
     </div>
   );
 }
