@@ -1,6 +1,6 @@
 // src/components/VideoEmojiSection.jsx
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import sampleVideo from "../assets/vg.mp4";
 
@@ -19,24 +19,47 @@ const textVariants = {
 };
 
 export default function VideoEmojiSection() {
+  const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const handleSoundToggle = () => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = !video.muted;
+      setIsMuted(video.muted);
+    }
+  };
+
   const loveQuote =
     "In every heartbeat, I find you. In every breath, I keep you. Forever is just the beginning with you.";
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen px-4 py-10 bg-gradient-to-br from-purple-600 via-pink-500 to-red-500">
-      <div className="w-full md:w-1/2 p-4">
+      {/* Video Section */}
+      <div className="relative w-full md:w-1/2 p-4">
         <video
-          className="rounded-1xl w-full h-[500px] object-cover shadow-2xl"
+          ref={videoRef}
+          className="rounded-2xl w-full h-[300px] md:h-[500px] object-cover shadow-2xl"
           autoPlay
-          muted
           loop
           playsInline
+          muted={isMuted}
+          controls={false}
         >
           <source src={sampleVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+
+        {/* Sound Button */}
+        <button
+          onClick={handleSoundToggle}
+          className="absolute bottom-4 right-4 bg-white/20 hover:bg-white/30 text-white font-medium py-2 px-4 rounded-lg backdrop-blur-sm border border-white transition-all duration-300"
+        >
+          {isMuted ? "🔇 Unmute" : "🔊 Mute"}
+        </button>
       </div>
 
+      {/* Quote Section */}
       <div className="w-full md:w-1/2 p-4 text-white">
         <motion.div
           initial={{ opacity: 0, y: 40, scale: 0.95 }}
